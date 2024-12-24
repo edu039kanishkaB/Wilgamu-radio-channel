@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilgamu Radio - Online Radio Channel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>🎙️ Wilgamu Radio</h1>
+        <p>Bringing music and entertainment to your world, live!</p>
+    </header>
+    <main>
+        <section class="broadcast">
+            <h2>Live Broadcast</h2>
+            <p>Status: <span id="liveStatus">Connecting...</span></p>
+            <audio id="livePlayer" controls autoplay>
+                <source src="http://your-stream-url/stream" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="volume-control">
+                <label for="volume">Volume:</label>
+                <input id="volume" type="range" min="0" max="1" step="0.1" value="0.5">
+            </div>
+        </section>
+
+        <section class="requests">
+            <h2>Request a Song</h2>
+            <form id="requestForm" method="post" action="/request">
+                <input type="text" name="song" placeholder="Enter song name" required>
+                <input type="text" name="artist" placeholder="Enter artist name" required>
+                <button type="submit">Send Request</button>
+            </form>
+        </section>
+
+       <div id="chatContainer">
+    <h3>Live Chat</h3>
+    <div id="chatMessages"></div>
+    <input type="text" id="chatInput" placeholder="Type your message...">
+    <button id="sendButton">Send</button>
+	<style>
+    #chatContainer {
+        width: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    #chatMessages {
+        height: 200px;
+        overflow-y: scroll;
+        border: 1px solid #eee;
+        padding: 5px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+    }
+    #chatInput {
+        width: 75%;
+        padding: 5px;
+    }
+    #sendButton {
+        width: 20%;
+        padding: 5px;
+    }
+</style>
+
+</div>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Wilgamu Radio. All rights reserved.</p>
+    </footer>
+   <script src="js/script.js"></script>
+</body>
+</html>
